@@ -5,6 +5,11 @@
     <meta name="description" content="Brett Beattie's Portfolio Web Page"/>
     <title>Brett Beattie's Portfolio</title>
     <link href="favicon.ico" rel="icon" />
+    <style>
+        section {
+            border: 1px solid;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -39,13 +44,14 @@
             led a team to build an app from the ground up, and dabbled in some solo stuff too! You can find more information about my <a href="#projects">projects</a> <br />
             and <a href="#experience">experience</a> below. <br /> <br />
             When I'm not thinking about designing projects or writing code, I enjoy spending my time doing any the following: 
-            <ul>
-                <li>I love <strong>cooking</strong>! I've slowly been improving my skills in the kitchen and my stomach loves me for it!</li>
-                <li>I am an avid <strong>gamer</strong>. I enjoy all sorts of RPGs, but the one that grabs most of my gaming time is World of Warcraft.</li>
-                <li>I'm very passionate about long distance <strong>running</strong> and try to get a run in every day.</li>
-                <li>And I love <strong>experiencing new things</strong>, meeting new people, and creating new opportunities!</li>
-            </ul>
         </p>
+        <ul>
+            <li>I love <strong>cooking</strong>! I've slowly been improving my skills in the kitchen and my stomach loves me for it!</li>
+            <li>I am an avid <strong>gamer</strong>. I enjoy all sorts of RPGs, but the one that grabs most of my gaming time is World of Warcraft.</li>
+            <li>I'm very passionate about long distance <strong>running</strong> and try to get a run in every day.</li>
+            <li>And I love <strong>experiencing new things</strong>, meeting new people, and creating new opportunities!</li>
+        </ul>
+     
 
         <aside>
             Socials: 
@@ -63,31 +69,33 @@
             <b>University of California, San Diego</b> <br />
             <em>B.S. in Mathematics and Computer Science</em> <br />
             Class of 2023
-            <details>
-                <summary>GPA and Relevent Coursework</summary>
-                <p>
-                    Overall GPA: 3.5/4.0 <br />
-                    Relevent Coursework: Software Engineering, Design & Analysis of Algorithms, Advanced Data Structures, <br />
-                    Computer Organization and Systems Programming, Object Oriented Design, Operating Systems, Computer Security, Web Client Languages
-                </p>
-            </details>
         </p>
+        <details>
+            <summary>GPA and Relevent Coursework</summary>
+            <p>
+                Overall GPA: 3.5/4.0 <br />
+                Relevent Coursework: Software Engineering, Design & Analysis of Algorithms, Advanced Data Structures, <br />
+                Computer Organization and Systems Programming, Object Oriented Design, Operating Systems, Computer Security, Web Client Languages
+            </p>
+        </details>
     </section>
     <hr />
 
     <section id="skills">
         <h2>Skills & Expertise</h2>
         <table>
+            <caption>Skills & Expertise</caption>
             <colgroup>
                 <col />
                 <col />
                 <col />
             </colgroup>
-            <caption>Skills & Expertise</caption>
             <thead>
-                <th>Software Development</th>
-                <th>Frontend Dev</th>
-                <th>Core Skills</th>
+                <tr>
+                    <th>Software Development</th>
+                    <th>Frontend Dev</th>
+                    <th>Core Skills</th>
+                </tr> 
             </thead>
             <tbody>
                 <tr>                
@@ -120,34 +128,30 @@
     <section id="experience">
         <h2>Experience</h2>
         <h3>Professional Experience</h3>
-        <p>
-            <strong>Software Development Engineer Intern</strong> <br />
-            <i>Amazon Prime Video, May-August 2022</i>
-            <ul>
-                <li>Owned a client-side, customer-facing project in an Android environment.</li>
-                <li>Utilized Android Studio's various features such as emulators, logging, and debug mode to improve my development process.</li>
-                <li>Designed and implemented a system for users to search for downloaded content without an
-                    internet connection.</li>
-                <li>Led meetings with experienced engineers to get feedback on my project, such as design document reviews
-                    and technical demos.</li>
-                <li>Gained a deeper understanding of different aspects of production level code, such as design patterns,
-                    metrics, and code reviews.</li>
-            </ul>
-        </p>
+        <strong>Software Development Engineer Intern</strong> <br />
+        <i>Amazon Prime Video, May-August 2022</i>
+        <ul>
+            <li>Owned a client-side, customer-facing project in an Android environment.</li>
+            <li>Utilized Android Studio's various features such as emulators, logging, and debug mode to improve my development process.</li>
+            <li>Designed and implemented a system for users to search for downloaded content without an
+                internet connection.</li>
+            <li>Led meetings with experienced engineers to get feedback on my project, such as design document reviews
+                and technical demos.</li>
+            <li>Gained a deeper understanding of different aspects of production level code, such as design patterns,
+                metrics, and code reviews.</li>
+        </ul>
 
         <h3>Leadership Experience</h3>
-        <p>
-            <strong>Division 1 NCAA Track and Field/Cross Country Captain</strong>
-            <ul>
-                <li>Acted as a bridge between the team and our coaches</li>
-                <li>Worked with my teammates to help them achieve their goals on and off the field</li>
-            </ul>
-            <strong>Triton Athlete Council Representative</strong>
-            <ul>
-                <li>Represented the UCSD Men's Cross Country Team in a council of peer athletes.</li>
-                <li>Contributed to the planning of career development seminars and tutoring sessions for scholar athletes.</li>
-            </ul>
-        </p>
+        <strong>Division 1 NCAA Track and Field/Cross Country Captain</strong>
+        <ul>
+            <li>Acted as a bridge between the team and our coaches</li>
+            <li>Worked with my teammates to help them achieve their goals on and off the field</li>
+        </ul>
+        <strong>Triton Athlete Council Representative</strong>
+        <ul>
+            <li>Represented the UCSD Men's Cross Country Team in a council of peer athletes.</li>
+            <li>Contributed to the planning of career development seminars and tutoring sessions for scholar athletes.</li>
+        </ul>
 
     </section>
     <hr />
@@ -158,14 +162,12 @@
         <h3>Recipeal - Recipe Manager Web App</h3>
         <details>
             <summary>Project Details</summary>
-            <p>
-                <ul>
-                    <li>Managed an agile team of 11 students in the creation of Recipeal, a recipe manager web application.</li>
-                    <li>Led and organized agile meetings such as stand-ups, sprint planning & review meetings, and retrospectives.</li>
-                    <li>Oversaw and participated in the development process from start to finish, including brainstorming, feature
-                        development, and testing.</li>
-                </ul>
-            </p>
+            <ul>
+                <li>Managed an agile team of 11 students in the creation of Recipeal, a recipe manager web application.</li>
+                <li>Led and organized agile meetings such as stand-ups, sprint planning & review meetings, and retrospectives.</li>
+                <li>Oversaw and participated in the development process from start to finish, including brainstorming, feature
+                    development, and testing.</li>
+            </ul>
         </details>
         <br />
         <iframe src="https://recipeal.netlify.app/" title="Recipeal - Recipe Manager Web App"></iframe>
@@ -191,20 +193,17 @@
     </section>
     <hr />
 
-    <footer>
-        <a href="https://www.linkedin.com/in/brett-beattie-b738b1172/">LinkedIn</a>
-        <a href="https://github.com/brettbeat/">GitHub</a>
-    </footer>
-
    <!--<template>--> 
         <section id="demo">
+            <h2>Demo Section</h2>
             <div id="demoDiv">This is a <span style="color:blue">div!</span></div>
             <pre> And here is an example 
                      of me using 
                         the pre tag!
             </pre>
+            
+            Here is an example of the picture tag. Resize your screen to see a different picture!
             <picture>
-                Here is an example of the picture tag. Resize your screen to see a different picture!
                 <source media="(min-width:850px)" srcset="3B434650-A8DB-47B4-B3EC-C9CC68E4B604-1-1024x614-0.png" />
                 <source media="(min-width:700px)" srcset="5B1234A1-6189-4949-8660-A25AAD8A63BD-1-900x600-0.png" />
                 <img src="5B1234A1-6189-4949-8660-A25AAD8A63BD-1-1024x537.png" alt="busy city street" />
@@ -272,9 +271,15 @@
             <svg width="300" height="200">
                 <polygon points="100,10 40,198 190,78 10,78 160,198"
                 style="fill:lime;stroke:green;stroke-width:5;fill-rule:evenodd;" />
-                Sorry, your browser does not support inline SVG.
-              </svg>
+            </svg> <br />
+            <template>
+                Can't see this!! (planning on using JS + template to surround my demo section as a way to hide it after HW 1)
+            </template>
         </section>
-    <!--</template>--> 
+    <!--</template>-->
+    <footer>
+        <a href="https://www.linkedin.com/in/brett-beattie-b738b1172/">LinkedIn</a>
+        <a href="https://github.com/brettbeat/">GitHub</a>
+    </footer> 
 </body>
 </html>
