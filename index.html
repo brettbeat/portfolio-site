@@ -2,74 +2,322 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Brett Beattie's Portfolio Web Page"/>
     <title>Brett Beattie's Portfolio</title>
     <link href="favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/friz-quadrata-std"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Open-Sans">
     <style>
+        * {
+            font-family: 'Open-Sans', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        @media screen and (max-width: 650px) {
+            img {
+                width: 250px;
+            }
+            .flex-container {
+                flex-wrap: wrap;
+            }
+            .flex-container p {
+                padding: 5% 0 5% 0;
+            }
+            #home-desc {
+                font-size: 2.7dvmax;
+            }
+        }
+        body {
+            margin: 0;
+        }
+        abbr {
+            text-decoration: none;
+        }
+        abbr span {
+            display: none;
+        }
+        abbr::before {
+            content: attr(title);
+        }
         section {
-            border: 1px solid;
+            position: relative;
+            padding-top: 8dvh;
+            padding-bottom: 16dvh;
+            z-index: 1;
+        }
+        table {
+            width: 100%;
+            height: 1.1vh;
+            border-collapse: collapse;
+        }
+        td {
+            width: 5%;
+            padding: 0;
+        }
+        .color1 {
+            background-color: yellowgreen;
+        }
+        .color2 {
+           background-color: #faa732;
+        }
+        .color3 {
+            background-color: rgb(121, 193, 216);
+        }
+        .color4 {
+            background-color: lightgray;
+        }
+        .color5 {
+            background-color: rgb(44, 90, 44);
+        }
+        #home {
+            height: 76dvh;
+            background: linear-gradient(rgba(37, 108, 31, 0.85),rgb(37, 108, 31, 0.85)), url(IMG_4213.JPG);
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+        #contact {
+            background-color: rgb(51, 135, 44);
+            color: white;
+        }
+        #education {
+            text-align: center;
+        }
+        #projects,#contact {
+           text-align: center;
+        }
+        #demo {
+            display: none;
+        }
+        
+        main h2,h1 {
+            color: white;
+        }
+        h1 {
+            font-family: 'Friz Quadrata Std', sans-serif;
+            letter-spacing: 0.5dvw; 
+            font-size: 6dvmax;
+            margin-top: 25vh; /* need to make sure this is actually center of screen*/
+            margin-bottom: 4vh;
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.15rem;
+            font-weight: 800;
+        }
+
+        .centered-line {
+            margin: auto;
+            width: 25%;
+            height: 0.5dvh;
+            margin-bottom: 10dvh;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            height: auto;
+            width: 100dvw;
+            background-color: rgba(37, 108, 31, 0.85);
+            z-index: 2;
+        }
+        header a {
+            font-size: 1.15rem;
+            color: #8dfdbc;
+            text-decoration: none;
+        }
+        header a:hover {
+            color: white;
+        }
+        /*need to fix these coming out of the header container when resizing*/
+        nav li {
+            display: inline-block;
+            padding: 0 1.5% 0 1.5%;
+        }
+        nav {
+            text-align: center;
+        }
+        .anchor {
+            position: absolute;
+            top: 0vh;
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 0 10% 0 10%;
+            gap: 5dvmax;
+        }
+        .flex-container p {
+            font-size: 1rem;
+            width: 80dvw;
+        }
+        .flex-container ul {
+            margin-left: -3%;
+            font-size: 1rem;
+        }
+        .flex-container li {
+            margin-bottom: 1.5%;
+        }
+        .flex-container td {
+            /*border-right: 1px solid grey;*/
+            padding: 0 2% 0 2%;
+        }
+        .flex-container td:last-of-type {
+            padding: none;  
+        }
+        th {
+            font-size: 1.25rem;
+        }
+        strong {
+            font-size: 1.15rem;
+        }
+        .alt {
+            background-color:rgb(241, 240, 240);
+        }
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1dvh;
+            font-weight: 500;
+            margin-bottom: 3%;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+            gap: 0.5dvh;
+        }
+        form * {
+            border: none;
+            border-radius: 5px;
+            height: 6dvh;
+        }
+        textarea {
+            height: 20dvh;
+        }
+        input[type|=submit] {
+            width: 10dvmax;
+            background-color:#8dfdbc;
+            color: rgb(37, 108, 31);
+            margin: auto;
+        }
+        iframe {
+            width: 40dvw;
+            height: 40dvh;
+        }
+        @keyframes jump {
+            0% {
+                margin-top: 0;
+            }
+            50% {
+                margin-top: 3dvh;
+            }
+            100% {
+                margin-top: 0;
+            }
+        }
+        #down-arrow {
+            width: 4.5rem;
+            animation: jump 2s infinite;
+            animation-delay: 2s;
+            transition: width 0.5s;
+        }
+        #down-arrow:hover {
+            width: 5.5rem;
+            animation: none;
+        }
+        #home-desc {
+            margin-bottom: 7%;
         }
     </style>
 </head>
 <body>
+    <main>
+        <section id="home">
+            <div id="home-anchor" class="anchor"></div>
+            <h1>BRETT BEATTIE</h1>
+            <div class="centered-line color1"></div>
+            <h2 id="home-desc">Software Engineer & App Developer</h2>
+            <a href="#about-anchor"><img id="down-arrow" src="arrow-down-2828.svg"/></a>
+        </section>
+    </main>
     <header>
+        <table>
+            <tr>
+                <td class="color1"></td>
+                <td class="color2"></td>
+                <td class="color3"></td>
+                <td class="color4"></td>
+                <td class="color5"></td>
+                <td class="color1"></td>
+                <td class="color2"></td>
+                <td class="color3"></td>
+                <td class="color4"></td>
+                <td class="color5"></td>
+                <td class="color1"></td>
+                <td class="color2"></td>
+                <td class="color3"></td>
+                <td class="color4"></td>
+                <td class="color5"></td>
+                <td class="color1"></td>
+                <td class="color2"></td>
+                <td class="color3"></td>
+                <td class="color4"></td>
+                <td class="color5"></td>
+            </tr>
+        </table>
         <nav>
             <ul>
-                <li><a href="#index">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li> 
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <!--<li><a href="#demo">?</a></li> -->
+                <li><a href="#home-anchor"><abbr title="Home"><span>HOME</span></abbr></a></li>
+                <li><a href="#about-anchor"><abbr title="About"><span>ME</span></abbr></a></li>
+                <li><a href="#edu-anchor"><abbr title="Education"><span>EDU</span></abbr></a></li>
+                <li><a href="#skills-anchor"><abbr title="Skills"><span>SKI</span></abbr></a></li>
+                <li><a href="#exp-anchor"><abbr title="Experience"><span>EXP</span></abbr></a></li>
+                <li><a href="#proj-anchor"><abbr title="Projects"><span>PROJ</span></abbr></a></li>
+                <li><a href="#contact-anchor"><abbr title="Contact"><span>CON</span></abbr></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="home">
-            <h1>Brett Beattie</h1>
-            <h2>Software Engineer | App Developer | Gaming Enthusiast</h2>
-            <img src="IMG_0271.png" alt="Headshot of Brett Beattie" width="370" height="450"/>
-        </section>
-    </main>
-    <hr />
-
     <section id="about">
+        <div id="about-anchor" class="anchor"></div>
         <h2>About me</h2>
-        <p> 
-            <b>Hi, I'm Brett!</b> <br /> <br />
-            I love working with others to build great software with quality code :). I've contributed to corporate software with huge existing codebases, <br />
-            led a team to build an app from the ground up, and dabbled in some solo stuff too! You can find more information about my <a href="#projects">projects</a> <br />
-            and <a href="#experience">experience</a> below. <br /> <br />
-            When I'm not thinking about designing projects or writing code, I enjoy spending my time doing any the following: 
-        </p>
-        <ul>
-            <li>I love <strong>cooking</strong>! I've slowly been improving my skills in the kitchen and my stomach loves me for it!</li>
-            <li>I am an avid <strong>gamer</strong>. I enjoy all sorts of RPGs, but the one that grabs most of my gaming time is World of Warcraft.</li>
-            <li>I'm very passionate about long distance <strong>running</strong> and try to get a run in every day.</li>
-            <li>And I love <strong>experiencing new things</strong>, meeting new people, and creating new opportunities!</li>
-        </ul>
-     
-
-        <aside>
-            Socials: 
-            <nav>
-                <a href="https://www.linkedin.com/in/brett-beattie-b738b1172/">LinkedIn</a>
-                <a href="https://github.com/brettbeat/">GitHub</a>
-            </nav>
-        </aside>
+        <div class="centered-line color2"></div>
+        <div class="flex-container">
+            <img src="IMG_0271.jpg" alt="Headshot of Brett Beattie" width="27%" height="350vh" loading="lazy"/>
+            <p> 
+                <strong>Hi, I'm Brett!</strong> <br /> <br />
+                I love working with others to build great software with quality code :). I've contributed to corporate software with huge existing codebases,
+                led a team to build an app from the ground up, and dabbled in some solo stuff too! You can find more information about my <a href="#proj-anchor">projects</a>
+                and <a href="#exp-anchor">experience</a> below. <br /> <br />
+                Have a cool idea or simply want to chat? Reach out to me on social media or send me an <a href="#contact-anchor">email</a> <br /> <br />
+                <a href="https://www.linkedin.com/in/brett-beattie-b738b1172/"><img src="linkedin-130.svg" width="20dvmax" height="20dvmax" /></a>
+                <a href="https://github.com/brettbeat/"><img src="github-logo-6532.svg" width="20dvmax" height="20dvmax" /></a>
+            </p>
+            <div id="personal">
+                <strong>My Personal Interests</strong> <br /> <br />
+                When I'm not thinking about designing projects or writing code, I enjoy spending my time doing any the following: 
+                <ul>
+                    <li>I love <b>cooking</b>! I've slowly been improving my skills in the kitchen.</li>
+                    <li>I am an avid <b>gamer</b>, especially RPGs</li>
+                    <li>I'm very passionate about long distance <b>running</b> and try to get a run in every day.</li>
+                    <li>And I love <b>experiencing new things</b> and creating new opportunities!</li>
+                </ul>
+            </div>
+        </div>
+        
     </section>
-    <hr />
 
-    <section id="education">
+    <section id="education" class="alt">
+        <div id="edu-anchor" class="anchor"></div>
         <h2>Education</h2>
-        <p>
-            <b>University of California, San Diego</b> <br />
-            <em>B.S. in Mathematics and Computer Science</em> <br />
-            Class of 2023
-        </p>
+        <div class="centered-line color3"></div>
+        <h3>University of California, San Diego</h3>
+        <em>B.S. in Mathematics and Computer Science</em> <br />
+        Class of 2023
         <details>
             <summary>GPA and Relevent Coursework</summary>
             <p>
@@ -79,85 +327,90 @@
             </p>
         </details>
     </section>
-    <hr />
 
     <section id="skills">
+        <div id="skills-anchor" class="anchor"></div>
         <h2>Skills & Expertise</h2>
-        <table>
-            <caption>Skills & Expertise</caption>
-            <colgroup>
-                <col />
-                <col />
-                <col />
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Software Development</th>
-                    <th>Frontend Dev</th>
-                    <th>Core Skills</th>
-                </tr> 
-            </thead>
-            <tbody>
-                <tr>                
-                    <td>
-                        <ul>
-                            <li>Experienced in both OOP and functional: <code>C++, Java, Python, Kotlin</code></li>
-                            <li>Familiar with version control systems such as Git</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>Passionate about UI/UX.</li>
-                            <li>Experience building web applications in HTML, CSS, & JavaScript</li>
-                        </ul>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>Solid foundation in computer science principles like data structures, algorithms, etc.</li>
-                            <li>Ability to follow existing programming style guidelines to maintain consistent, quality code</li>
-                            <li>Great verbal and written communication skills, team player mentality</li>
-                            <li>Strong analytical ability to solve problems and onboard quickly</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="centered-line color4"></div>
+        <div class="flex-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Software Development</th>
+                        <th>Frontend Dev</th>
+                        <th>Core Skills</th>
+                    </tr> 
+                </thead>
+                <tbody>
+                    <tr>                
+                        <td>
+                            <ul>
+                                <li>Experienced in both OOP and functional: <code>C++, Java, Python, Kotlin</code></li>
+                                <li>Familiar with version control systems such as Git</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Passionate about UI/UX.</li>
+                                <li>Experience building web applications in HTML, CSS, & JavaScript</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>Solid foundation in computer science principles like data structures, algorithms, etc.</li>
+                                <li>Ability to follow existing programming style guidelines to maintain consistent, quality code</li>
+                                <li>Great verbal and written communication skills, team player mentality</li>
+                                <li>Strong analytical ability to solve problems and onboard quickly</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
-    <hr />
 
-    <section id="experience">
+    <section id="experience" class="alt">
+        <div id="exp-anchor" class="anchor"></div>
         <h2>Experience</h2>
-        <h3>Professional Experience</h3>
-        <strong>Software Development Engineer Intern</strong> <br />
-        <i>Amazon Prime Video, May-August 2022</i>
-        <ul>
-            <li>Owned a client-side, customer-facing project in an Android environment.</li>
-            <li>Utilized Android Studio's various features such as emulators, logging, and debug mode to improve my development process.</li>
-            <li>Designed and implemented a system for users to search for downloaded content without an
-                internet connection.</li>
-            <li>Led meetings with experienced engineers to get feedback on my project, such as design document reviews
-                and technical demos.</li>
-            <li>Gained a deeper understanding of different aspects of production level code, such as design patterns,
-                metrics, and code reviews.</li>
-        </ul>
-
-        <h3>Leadership Experience</h3>
-        <strong>Division 1 NCAA Track and Field/Cross Country Captain</strong>
-        <ul>
-            <li>Acted as a bridge between the team and our coaches</li>
-            <li>Worked with my teammates to help them achieve their goals on and off the field</li>
-        </ul>
-        <strong>Triton Athlete Council Representative</strong>
-        <ul>
-            <li>Represented the UCSD Men's Cross Country Team in a council of peer athletes.</li>
-            <li>Contributed to the planning of career development seminars and tutoring sessions for scholar athletes.</li>
-        </ul>
-
+        <div class="centered-line color5"></div>
+        <div class="flex-container">
+            <div id="prof-exp">
+                <h3>Professional Experience</h3>
+                <strong>Software Development Engineer Intern</strong> <br />
+                <i>Amazon Prime Video, May-August 2022</i>
+                <ul>
+                    <li>Owned a client-side, customer-facing project in an Android environment.</li>
+                    <li>Utilized Android Studio's various features such as emulators, logging, and debug mode to improve my development process.</li>
+                    <li>Designed and implemented a system for users to search for downloaded content without an
+                        internet connection.</li>
+                    <li>Led meetings with experienced engineers to get feedback on my project, such as design document reviews
+                        and technical demos.</li>
+                    <li>Gained a deeper understanding of different aspects of production level code, such as design patterns,
+                        metrics, and code reviews.</li>
+                </ul>
+            </div>
+            <div id="lead-exp">
+                <h3>Leadership Experience</h3>
+                <strong>Division 1 NCAA Track and Field/Cross Country Captain</strong> <br />
+                <i>UC San Diego, 2022-2023</i>
+                <ul>
+                    <li>Acted as a bridge between the team and our coaches</li>
+                    <li>Worked with my teammates to help them achieve their goals on and off the field</li>
+                </ul>
+                <strong>Triton Athlete Council Representative</strong> <br />
+                <i>UC San Diego, 2021-2023</i>
+                <ul>
+                    <li>Represented the UCSD Men's Cross Country Team in a council of peer athletes.</li>
+                    <li>Contributed to the planning of career development seminars and tutoring sessions for scholar athletes.</li>
+                </ul>
+            </div>
+        </div>
     </section>
-    <hr />
 
     <section id="projects">
+        <div id="proj-anchor" class="anchor"></div>
         <h2>Projects</h2>
+        <div class="centered-line color1"></div>
 
         <h3>Recipeal - Recipe Manager Web App</h3>
         <details>
@@ -173,25 +426,18 @@
         <iframe src="https://recipeal.netlify.app/" title="Recipeal - Recipe Manager Web App"></iframe>
 
     </section>
-    <hr />
 
     <section id="contact">
-        <h2>Contact</h2>
-        <h3>Let's get in touch!</h3>
+        <div id="contact-anchor" class="anchor"></div>
+        <h2>Let's get in touch!</h2>
+        <div class="centered-line color4"></div>
         <form action="mailto:brett.beattie99@gmail.com" method="post" enctype="text/plain">
-            <fieldset>
-                <legend>Email Form:</legend>
-                <label for="name">Name:</label> <br />
-                <input type="text" name="name" id="name"> <br />
-                <label for="address">Email Address:</label> <br /> 
-                <input type="text" name="address" id="address"> <br />
-                <label for="message">Message:</label> <br />
-                <textarea name="message" id="message"></textarea> <br />
-                <input type="submit" value="Send">
-            </fieldset>
+            <input type="text" name="name" id="name" placeholder="Your name"> <br />
+            <input type="text" name="address" id="address" placeholder="Your e-mail address"> <br />
+            <textarea name="message" id="message" placeholder="Your message"></textarea> <br />
+            <input type="submit" value="Send">
         </form>
     </section>
-    <hr />
 
    <!--<template>--> 
         <section id="demo">
@@ -277,9 +523,11 @@
             </template>
         </section>
     <!--</template>-->
+<!--
     <footer>
         <a href="https://www.linkedin.com/in/brett-beattie-b738b1172/">LinkedIn</a>
         <a href="https://github.com/brettbeat/">GitHub</a>
-    </footer> 
+    </footer>
+-->
 </body>
 </html>
