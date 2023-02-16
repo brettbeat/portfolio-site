@@ -16,7 +16,7 @@
             scroll-behavior: smooth;
         }
         @media screen and (max-width: 650px) {
-            img {
+            img[alt^="Headshot"] {
                 width: 250px;
             }
             .flex-container {
@@ -442,85 +442,6 @@
    <!--<template>--> 
         <section id="demo">
             <h2>Demo Section</h2>
-            <div id="demoDiv">This is a <span style="color:blue">div!</span></div>
-            <pre> And here is an example 
-                     of me using 
-                        the pre tag!
-            </pre>
-            
-            Here is an example of the picture tag. Resize your screen to see a different picture!
-            <picture>
-                <source media="(min-width:850px)" srcset="3B434650-A8DB-47B4-B3EC-C9CC68E4B604-1-1024x614-0.png" />
-                <source media="(min-width:700px)" srcset="5B1234A1-6189-4949-8660-A25AAD8A63BD-1-900x600-0.png" />
-                <img src="5B1234A1-6189-4949-8660-A25AAD8A63BD-1-1024x537.png" alt="busy city street" />
-            </picture>
-            <br />
-            Here is canvas (I drew a circle lol): <br />
-            <canvas id="demoCanvas" width="200" height="100" style="border:1px solid"></canvas>
-            <script>
-                let canvas = document.getElementById("demoCanvas");
-                let ctx = canvas.getContext("2d");
-                ctx.beginPath();
-                ctx.arc(95, 50, 40, 0, 2*Math.PI);
-                ctx.stroke();
-            </script>
-
-            <figure>
-                <img src="113B2D50-8AF6-44F0-BD13-B1AD77B9CB66-1-1024x768.png" alt="a bunch of multicolor lanterns"/>
-                <figcaption>Fig. 1 - A bunch of pink and yellow festival lanterns in Seoul, South Korea.</figcaption>
-            </figure>
-            Here is a list of my favorite music genres
-            <ol>
-                <li>Hip Hop</li>
-                <li>Slow Jazz</li>
-                <li>Alt Rock</li>
-            </ol>
-
-            Here is a cow sound! <br />
-            <audio controls>
-                <source src="3DUMFVX-cow.mp3" type="audio/mpeg"/>
-                Your browser does not support the audio tag.
-            </audio> <br />
-
-            Here is a super OG trailer for one of my favorite games ever, World of Warcraft <br />
-            <video controls>
-                <source src="wow_cintrailer1.mp4" type="video/mp4"/>
-            </video> <br />
-
-            <label for="ice-cream-choice">Pick your favorite ice cream flavor!</label>
-            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
-            <datalist id="ice-cream-flavors">
-                <option value="Chocolate"></option>
-                <option value="Vanilla"></option>
-                <option value="Hazelnut"></option>
-                <option value="Pistachio"></option>
-                <option value="Mint Chip"></option>
-            </datalist> <br />
-
-            <label for="carb">Choose a carb:</label>
-            <select name="carb" id="carb">
-                <optgroup label="Potato">
-                    <option value="russet">Russet Potato</option>
-                    <option value="yukon">Yukon Potato</option>
-                    <option value="Sweet">Sweet Potato</option>
-                </optgroup>
-                <optgroup label="Bread">
-                    <option value="sourdough">Sourdough Bread</option>
-                    <option value="wheat">Wheat Bread</option>
-                    <option value="white">White Bread</option>
-                </optgroup>
-            </select> <br />
-
-            <button type="button">Button that does nothing!</button> <br />
-
-            Cool SVG graphic star :D
-            <svg width="300" height="200">
-                <polygon points="100,10 40,198 190,78 10,78 160,198"
-                style="fill:lime;stroke:green;stroke-width:5;fill-rule:evenodd;" />
-            </svg> <br />
-            <template>
-                Can't see this!! (planning on using JS + template to surround my demo section as a way to hide it after HW 1)
-            </template>
         </section>
     <!--</template>-->
 <!--
