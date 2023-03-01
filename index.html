@@ -85,7 +85,7 @@
             text-align: center;
         }
         #contact {
-            background-color: rgb(51, 135, 44);
+            background-color: rgba(37, 108, 31);
             color: white;
         }
         #education {
@@ -244,17 +244,30 @@
             top: 1.1vh;
             background-color: rgba(37, 108, 31);
         }
+        dialog {
+            width: 75%;
+            height: 50%;
+        }
+        #dialog-msg {
+            margin-top: 10%;
+            margin-bottom: 5%;
+        }
+        #ok-but {
+            font-size: 1.2rem;
+            width: 15%;
+            height: 15%;
+        }
     </style>
 </head>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DGBCRBB3TN"></script>
 <script type="text/javascript">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-DGBCRBB3TN');
+    gtag('config', 'G-DGBCRBB3TN');
 </script>
 
 <body> 
@@ -453,6 +466,10 @@
     </section>
 
     <section id="contact">
+        <dialog id="dialog">
+            <h2 id="dialog-msg">Message sent. Thanks for contacting me!</h2>
+            <button id="ok-but">Ok</button>
+        </dialog>
         <div id="contact-anchor" class="anchor"></div>
         <h2>Let's get in touch!</h2>
         <div class="centered-line color4"></div>
