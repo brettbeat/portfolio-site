@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Simple Dialogs</title>
+        <script src="/node_modules/dompurify/dist/purify.js"></script>
+    </head>
+    <body>
+        <h1>Simple Dialogs</h1>
+        <button id="alert">Alert</button>
+        <button id="confirm">Confirm</button>
+        <button id="prompt">Prompt</button>
+        <button id="safer-prompt">Safer Prompt</button>
+        <hr />
+        <output id="output"></output>
+
+        <script>
+            let alertBtn = document.getElementById("alert");
+            let confirmBtn = document.getElementById("confirm");
+            let promptBtn = document.getElementById("prompt");
+            let safePromptBtn = document.getElementById("safer-prompt");
+            let output = document.getElementById("output");
+            alertBtn.addEventListener("click", function() {
+                alert("Hey there");
+            });
+            confirmBtn.addEventListener("click", function() {
+                let confirmVal = confirm("Click OK to close this message.");
+                output.innerHTML = `The value returned by the confirm method is : ${confirmVal}`;
+            });
+            promptBtn.addEventListener("click", function() {
+                let promptVal = prompt("Enter a message:");
+                if(promptVal == "" || promptVal == null) {
+                    output.innerHTML = "You didn't enter anything";
+                } else {
+                    output.innerHTML = `Your message: ${promptVal}`;
+                }
+            });
+            safePromptBtn.addEventListener("click", function() {
+                let cleanPromptVal = DOMPurify.sanitize(prompt("Enter a message:"));
+                if(cleanPromptVal == "" || cleanPromptVal == null) {
+                    output.innerHTML = "You didn't enter anything";
+                } else {
+                    output.innerHTML = `Your message: ${cleanPromptVal}`;
+                }
+            });
+        </script>
+    </body>
+</html>

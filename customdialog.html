@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Custom Dialogs</title>
+        <script src="/node_modules/dompurify/dist/purify.js"></script>
+    </head>
+    <body>
+        <dialog id="dialog">
+            <h2></h2>
+            <input type="text" id="name-input" />
+            <button id="ok-but">Ok</button>
+            <button id="cancel-but">Cancel</button>
+        </dialog>
+        <h1>Custom Dialogs</h1>
+        <button id="alert">Alert</button>
+        <button id="confirm">Confirm</button>
+        <button id="prompt">Prompt</button>
+        <hr />
+        <output id="output"></output>
+
+        <script type="module">
+            import {attachCustomDialogs} from './customdialog.js';
+            attachCustomDialogs();
+        </script>
+    </body>
+</html>

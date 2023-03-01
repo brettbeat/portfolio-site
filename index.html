@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Brett Beattie's Portfolio Web Page"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <title>Brett Beattie's Portfolio</title>
     <link href="favicon.ico" rel="icon" />
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/friz-quadrata-std"/>
@@ -51,6 +52,11 @@
             width: 100%;
             height: 1.1vh;
             border-collapse: collapse;
+            z-index: 2;
+        }
+        #color-table {
+            position: fixed;
+            top: 0;
         }
         td {
             width: 5%;
@@ -116,11 +122,10 @@
             margin-bottom: 10dvh;
         }
         header {
-            position: fixed;
-            top: 0;
-            height: auto;
+            position: absolute;
+            bottom: 0;
+            height: 7.5dvh;
             width: 100dvw;
-            background-color: rgba(37, 108, 31, 0.85);
             z-index: 2;
         }
         header a {
@@ -137,6 +142,7 @@
             padding: 0 1.5% 0 1.5%;
         }
         nav {
+            bottom: 0;
             text-align: center;
         }
         .anchor {
@@ -199,6 +205,7 @@
             height: 20dvh;
         }
         input[type|=submit] {
+            cursor: pointer;
             width: 10dvmax;
             background-color:#8dfdbc;
             color: rgb(37, 108, 31);
@@ -230,22 +237,17 @@
             animation: none;
         }
         #home-desc {
-            margin-bottom: 7%;
+            margin-bottom: 3.5%;
+        }
+        .sticky {
+            position: fixed;
+            top: 1.1vh;
+            background-color: rgba(37, 108, 31);
         }
     </style>
 </head>
-<body>
-    <main>
-        <section id="home">
-            <div id="home-anchor" class="anchor"></div>
-            <h1>BRETT BEATTIE</h1>
-            <div class="centered-line color1"></div>
-            <h2 id="home-desc">Software Engineer & App Developer</h2>
-            <a href="#about-anchor"><img id="down-arrow" src="arrow-down-2828.svg"/></a>
-        </section>
-    </main>
-    <header>
-        <table>
+<body> 
+    <table id="color-table">
             <tr>
                 <td class="color1"></td>
                 <td class="color2"></td>
@@ -268,7 +270,19 @@
                 <td class="color4"></td>
                 <td class="color5"></td>
             </tr>
-        </table>
+    </table>
+
+    <main>
+        <section id="home">
+            <div id="home-anchor" class="anchor"></div>
+            <h1>BRETT BEATTIE</h1>
+            <div class="centered-line color1"></div>
+            <h2 id="home-desc">Software Engineer & App Developer</h2>
+            <a href="#about-anchor"><img id="down-arrow" src="arrow-down-2828.svg"/></a>
+        </section>
+    </main> 
+
+    <header>
         <nav>
             <ul>
                 <li><a href="#home-anchor"><abbr title="Home"><span>HOME</span></abbr></a></li>
@@ -423,7 +437,7 @@
             </ul>
         </details>
         <br />
-        <iframe src="https://recipeal.netlify.app/" title="Recipeal - Recipe Manager Web App"></iframe>
+        <iframe src="https://recipeal.netlify.app/" title="Recipeal - Recipe Manager Web App" hidden="true"></iframe>
 
     </section>
 
@@ -431,11 +445,12 @@
         <div id="contact-anchor" class="anchor"></div>
         <h2>Let's get in touch!</h2>
         <div class="centered-line color4"></div>
-        <form action="mailto:brett.beattie99@gmail.com" method="post" enctype="text/plain">
-            <input type="text" name="name" id="name" placeholder="Your name"> <br />
-            <input type="text" name="address" id="address" placeholder="Your e-mail address"> <br />
+        <form id="contact-form">
+            <input type="hidden" name="contact_number" />
+            <input type="text" name="user_name" id="name" placeholder="Your name" /> <br />
+            <input type="email" name="user_email" id="address" placeholder="Your e-mail address"> <br />
             <textarea name="message" id="message" placeholder="Your message"></textarea> <br />
-            <input type="submit" value="Send">
+            <input type="submit" value="Send" />
         </form>
     </section>
 
@@ -450,5 +465,12 @@
         <a href="https://github.com/brettbeat/">GitHub</a>
     </footer>
 -->
+    <script type="module">
+        import {stickyNav, sendEmail} from './scripts.js';
+        const navbarOffset = document.querySelector("header").offsetTop;
+        const colorBarHeight = document.getElementById("color-table").offsetHeight;
+        window.onload = () => {document.querySelector("iframe").hidden = false; sendEmail();};
+        window.onscroll = () => stickyNav(navbarOffset, colorBarHeight);
+    </script>
 </body>
 </html>
