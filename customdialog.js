@@ -47,7 +47,7 @@ function showPromptDialog() {
     dialogChildren[1].style.display = "";
     dialogChildren[1].value = ""; 
     dialogChildren[2].onclick = (event) => {output.innerHTML = `Prompt result : ${DOMPurify.sanitize(dialogChildren[1].value)}`; dialog.close();};
-    dialogChildren[3].onclick = (event) => {output.innerHTML = `Prompt result : `; dialog.close();};
+    dialogChildren[3].onclick = (event) => {output.innerHTML = `Prompt result : User didn't enter anything`; dialog.close();};
     dialogChildren[3].style.display = ""; 
     dialog.showModal();
 }

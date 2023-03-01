@@ -21,26 +21,27 @@
             let safePromptBtn = document.getElementById("safer-prompt");
             let output = document.getElementById("output");
             alertBtn.addEventListener("click", function() {
-                alert("Hey there");
+                alert("Alert Pressed!");
+                output.innerHTML = "";
             });
             confirmBtn.addEventListener("click", function() {
-                let confirmVal = confirm("Click OK to close this message.");
-                output.innerHTML = `The value returned by the confirm method is : ${confirmVal}`;
+                let confirmVal = confirm("Do you confirm this?");
+                output.innerHTML = `Confirm result: ${confirmVal}`;
             });
             promptBtn.addEventListener("click", function() {
                 let promptVal = prompt("Enter a message:");
                 if(promptVal == "" || promptVal == null) {
-                    output.innerHTML = "You didn't enter anything";
+                    output.innerHTML = "Prompt result: User didn't enter anything";
                 } else {
-                    output.innerHTML = `Your message: ${promptVal}`;
+                    output.innerHTML = `Prompt result: ${promptVal}`;
                 }
             });
             safePromptBtn.addEventListener("click", function() {
                 let cleanPromptVal = DOMPurify.sanitize(prompt("Enter a message:"));
                 if(cleanPromptVal == "" || cleanPromptVal == null) {
-                    output.innerHTML = "You didn't enter anything";
+                    output.innerHTML = "Prompt result: User didn't enter anything";
                 } else {
-                    output.innerHTML = `Your message: ${cleanPromptVal}`;
+                    output.innerHTML = `Prompt result: ${cleanPromptVal}`;
                 }
             });
         </script>

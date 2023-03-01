@@ -20,15 +20,15 @@ export function sendEmail() {
             (error) => {
                 console.log("Email send failure", error);
             });
-    });
+    }); 
+}
 
-    function showEmailDialog() {
-        document.getElementById("name").value = "";
-        document.getElementById("address").value = "";
-        document.getElementById("message").value = "";
-        let dialog = document.getElementById("dialog");
-        let dialogChildren = dialog.querySelectorAll("*");
-        dialogChildren[1].onclick = (event) => {dialog.close();};
-        dialog.showModal(); 
-    }
+function showEmailDialog() {
+    document.getElementById("name").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("message").value = "";
+    let dialog = document.getElementById("dialog");
+    let dialogChildren = dialog.querySelectorAll("*");
+    dialogChildren[1].onclick = (event) => {dialog.close();};
+    dialog.showModal(); 
 }
