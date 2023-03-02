@@ -54,7 +54,6 @@ function showFormDialog(event) {
 function showDeleteDialog(event) {
     let dialog = document.getElementById("delete-dialog");
     dialog.children.item(1).addEventListener("click", () => {
-        console.log(event);
         const blogItem = event.target.parentNode.children[0].textContent.split(" / ");
         for(let i = 0; i < blogList.length; i++) {
             if(blogItem[0] === blogList[i].title && blogItem[1] === blogList[i].date && blogItem[2] === blogList[i].summary) {
@@ -109,6 +108,7 @@ function editBlogItem(itemContent) {
             blogList[i] = editedContent;
             itemContent.innerHTML = `${editedContent.title} / ${editedContent.date} / ${editedContent.summary}`;
             localStorage.setItem("blogList", JSON.stringify(blogList));
+            break;
         }
     }
     resetFormVals();
