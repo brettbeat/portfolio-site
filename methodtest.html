@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>HW 5 Part 1</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 25%;
+            gap: 5px;
+            padding-bottom: 2%;
+        }
+        output {
+            white-space: pre;
+        }
+        header {
+            padding-bottom: 1%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">index</a>
+            <a href="webcomponent.html">webcomponent</a>
+        </nav>
+    </header>
+    <h1>HW 5 Part 1 - HTTP With Javascript</h1>
+    <form id="form1">
+        <input type="hidden" name="record-id" id="recordId">
+        <input type="text" name="article-name" id="articleName" placeholder="Article Name">
+        <textarea name="article-body" id="articleBody" placeholder="Article Body"></textarea>
+        <input type="date" name="article-date" id="articleDate" readonly>
+    </form>
+    <button type="submit" form="form1" id="postBtn">Post</button>
+    <button id="getBtn">Get</button>
+    <button type="submit" form="form1" id="putBtn">Put</button>
+    <button id="deleteBtn">Delete</button>
+    <br />
+    <output id="response"></output>
+
+    <script type="module">
+        import {init} from "./methodtest.js";
+        window.onload = () => init();
+    </script>
+</body>
+</html>
